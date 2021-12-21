@@ -26,12 +26,17 @@ python -m pip install frida-tools
 
 ![image-20210826095823033](README.assets/image-20210826095823033-16400693457833.png)
 
+https://github.com/frida
+
 下载对应版本 对应架构的frida-server：
 
-![image-20210826100052140](README.assets/image-20210826100052140-16400693457844.png)
+![image-20211221145514580](README.assets/image-20211221145514580.png)
+
+![image-20211221145528195](README.assets/image-20211221145528195.png)
 
 ```
-解压，重命名为frida-server 用adb复制到手机中 并且执行
+解压，重命名为frida-server 用adb复制到手机中 并且执行。
+夜神自带的adb在\Nox\bin目录下 加个系统变量就ok
 adb push frida-server /data/local/tmp
 adb shell "chmod 755 /data/local/tmp/frida-server"
 adb shell "/data/local/tmp/frida-server &"
@@ -39,7 +44,13 @@ adb shell "/data/local/tmp/frida-server &"
 然而夜神模拟器这个安卓5.1版本的会报错，改成7.1版本的了
 ```
 
+![image-20211221150048011](README.assets/image-20211221150048011.png)
+
 ![image-20210826102614164](README.assets/image-20210826102614164-16400693457845.png)
+
+到此环境配置完成
+
+
 
 
 
@@ -62,11 +73,13 @@ frida 14统一用的包名，15开始有部分就是中文了 用中文那个
 
 ```
 frida-dexdump -p 4126
+导出一堆dex 
 ```
 
 ![image-20210826104423990](README.assets/image-20210826104423990-16400693457848.png)
 
 ```
+把dex丢到jadx里面找
 目标是 X-App-Token 编码过程
 
 可疑dex：
