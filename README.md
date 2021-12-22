@@ -261,6 +261,29 @@ adb forward tcp:27043 tcp:27043
 
 
 
+# frida sslpinning 绕过
+
+sslpinning: app采用pinning验证证书或公钥
+
+比如，开代理就gg，导入证书也没用
+
+![image-20211222095050894](README.assets/image-20211222095050894.png)
+
+
+
+```
+先把burp证书复制进去
+adb push PortSwiggerCA.crt /data/local/tmp/cert-der.crt
+```
+
+![image-20211222112832943](README.assets/image-20211222112832943.png)
+
+脚本地址：
+
+https://codeshare.frida.re/browse
+
+
+
 # frida-dexdump（脱壳测试）
 
 ```
