@@ -311,8 +311,8 @@ frida-dexdump -p 4126
 ![image-20210826104423990](README.assets/image-20210826104423990-16400693457848.png)
 
 ```
-把dex丢到jadx里面找
-目标是 X-App-Token 编码过程
+dex2jar转换成jar包，然后就能看到java代码了
+目标是 X-App-Token 的编码过程
 
 可疑dex：
 0x94a87000.dex
@@ -336,5 +336,5 @@ String as = AuthUtils.getAS(this.f5974, replace);
 
 ![image-20210826113616930](README.assets/image-20210826113616930-164006934578512.png)
 
-
+这就头大了
 
